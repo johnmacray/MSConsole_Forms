@@ -132,18 +132,14 @@ class Page
 		content();
 		Console.CursorVisible = false;
 
-
-	l1:
-		key = Console.ReadKey(intercept: true);
-		//if (key.Key == ConsoleKey.UpArrow) Console.CursorTop--;
-		//if (key.Key == ConsoleKey.DownArrow) Console.CursorTop++;
-		pageNavigation();
-		keyboardEvents();
-
-		goto l1;
-
-		//Console.ReadKey();
-
+		while(true)
+		{
+			key = Console.ReadKey(intercept: true);
+			//if (key.Key == ConsoleKey.UpArrow) Console.CursorTop--;
+			//if (key.Key == ConsoleKey.DownArrow) Console.CursorTop++;
+			pageNavigation();
+			keyboardEvents();
+		}
 	}
 
 	void content()
