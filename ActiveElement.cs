@@ -20,7 +20,6 @@ class ActiveElement
 		this.TextStringLenght = content.Length;
 		object o = this.MemberwiseClone();
 		list.Add((ActiveElement)o);
-
 	}
 
 	public void Event_Message()

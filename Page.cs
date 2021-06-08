@@ -17,9 +17,11 @@ class Page
 	public int clickCount = 0;
 
 	ConsoleKeyInfo key;
-	public Page(string title)
+	public Page(string title, (int, int) size)
 	{
 		this.Title = title;
+		this.ConsoleSize = size;
+		Console.SetWindowSize(this.ConsoleSize.Item1, this.ConsoleSize.Item2);
 
 		content();
 		Console.CursorVisible = false;
@@ -118,7 +120,7 @@ class Page
 		}
 		catch (Exception ex)
 		{
-
+			//
 		}
 	}
 

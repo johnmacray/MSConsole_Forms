@@ -9,7 +9,7 @@ class ConsoleProgram
 {
 	public void Run()
 	{
-		Page newpage = new Page("Its a new test ConsolePage");
+		Page newpage = new Page("Its a new test ConsolePage", (120, 25));
 		//Thread.Sleep(Timeout.Infinite);
 	}
 }
