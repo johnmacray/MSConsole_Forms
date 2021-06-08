@@ -9,7 +9,7 @@ class ConsoleProgram
 {
 	public void Run()
 	{
-		Page pg = new Page("qweqwdq");
+		Page newpage = new Page("Its a new test ConsolePage");
 		//Thread.Sleep(Timeout.Infinite);
 	}
 }
@@ -127,7 +127,7 @@ class Page
 	public int clickCount = 0;
 
 	ConsoleKeyInfo key;
-	public Page(string title, ConsoleColor backColor = ConsoleColor.Black)
+	public Page(string title)
 	{
 		this.Title = title;
 
@@ -149,23 +149,27 @@ class Page
 	void content()
 	{
 		Tools.SkipLines(1);
-		Console.Write("=========Welcome to PowerfulConsole (ver. DevelopmentBuild - 0.1)=========");
-		ActiveElement text1 = new ActiveElement((0, 3), ActiveElementsList);
-		ActiveElement text2 = new ActiveElement((0, 5), ActiveElementsList);
-		ActiveElement text3 = new ActiveElement((0, 6), ActiveElementsList);
-		ActiveElement text4 = new ActiveElement((0, 7), ActiveElementsList);
-		ActiveElement text5 = new ActiveElement((0, 8), ActiveElementsList);
+		Console.Write("===============Welcome to MSConsole Forms (ver. DevelopmentBuild - 0.1)=========");
+		Tools.SkipLines(2);
+		int left = 25;
+		Tools.SetPosition(left, 3);
+		
+		ActiveElement text1 = new ActiveElement((left, 3), ActiveElementsList);
+		ActiveElement text2 = new ActiveElement((left, 5), ActiveElementsList);
+		ActiveElement text3 = new ActiveElement((left, 6), ActiveElementsList);
+		ActiveElement text4 = new ActiveElement((left, 7), ActiveElementsList);
+		ActiveElement text5 = new ActiveElement((left, 8), ActiveElementsList);
 
-		ActiveElement text6 = new ActiveElement((0, 9), ActiveElementsList);
-		ActiveElement text7 = new ActiveElement((0, 10), ActiveElementsList);
-		ActiveElement text8 = new ActiveElement((0, 11), ActiveElementsList);
-		ActiveElement text9 = new ActiveElement((0, 12), ActiveElementsList);
-		ActiveElement text10 = new ActiveElement((0, 13), ActiveElementsList);
-		ActiveElement text11 = new ActiveElement((0, 14), ActiveElementsList);
+		ActiveElement text6 = new ActiveElement((left, 9), ActiveElementsList);
+		ActiveElement text7 = new ActiveElement((left, 10), ActiveElementsList);
+		ActiveElement text8 = new ActiveElement((left, 11), ActiveElementsList);
+		ActiveElement text9 = new ActiveElement((left, 12), ActiveElementsList);
+		ActiveElement text1left = new ActiveElement((left, 13), ActiveElementsList);
+		ActiveElement text11 = new ActiveElement((left, 14), ActiveElementsList);
 		Tools.SkipLines(2);
 		
 
-		Button button1 = new Button(Tools.CurrentCursorPosition, "Enter", (10, 3));
+		Button button1 = new Button((0, 16), "Enter", (10, 3));
 		
 		Tools.SkipLines(2); // УСТАНОВКА СТАНДАРТНЫХ ЦВЕТОВ
 		Console.Write(new string(' ', 1), Console.ForegroundColor = this.GlobalTextColor, Console.BackgroundColor = this.PageBackgroundColor);
@@ -300,6 +304,7 @@ class ActiveElement
 		this.TextStringLenght = content.Length;
 		object o = this.MemberwiseClone();
 		list.Add((ActiveElement)o);
+		
 	}
 
 	public void Event_Message()
@@ -376,10 +381,5 @@ class Button
 			Tools.SetPosition(Position.Item1, Position.Item2);
 			Console.Write(Content, Console.ForegroundColor = ContentColor, Console.BackgroundColor = NormalButtonColor);
 		}
-
-
-
 	}
-
-
 }
