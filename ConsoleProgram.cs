@@ -23,6 +23,8 @@ class Tools
 	public static int LeftCursorBuffer;
 	public static int TopCursorBuffer;
 
+	public static (int, int) CurrentCursorPosition = (Console.CursorLeft, Console.CursorTop);
+
 	/// <summary>
 	///  Задает позицию курсора двумя параметрами: x(left), y(top).
 	/// </summary>
@@ -131,7 +133,11 @@ class Page
 
 		content();
 		Console.CursorVisible = false;
+		update();
+	}
 
+	void update()
+	{
 		while(true)
 		{
 			key = Console.ReadKey(intercept: true);
@@ -157,7 +163,9 @@ class Page
 		ActiveElement text10 = new ActiveElement((0, 13), ActiveElementsList);
 		ActiveElement text11 = new ActiveElement((0, 14), ActiveElementsList);
 		Tools.SkipLines(2);
-		Button button1 = new Button((Console.CursorLeft, Console.CursorTop), "Enter", (10, 3));
+		
+
+		Button button1 = new Button(Tools.CurrentCursorPosition, "Enter", (10, 3));
 		
 		Tools.SkipLines(2); // УСТАНОВКА СТАНДАРТНЫХ ЦВЕТОВ
 		Console.Write(new string(' ', 1), Console.ForegroundColor = this.GlobalTextColor, Console.BackgroundColor = this.PageBackgroundColor);
