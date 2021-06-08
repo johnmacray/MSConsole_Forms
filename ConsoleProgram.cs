@@ -156,6 +156,11 @@ class Page
 		ActiveElement text9 = new ActiveElement((0, 12), ActiveElementsList);
 		ActiveElement text10 = new ActiveElement((0, 13), ActiveElementsList);
 		ActiveElement text11 = new ActiveElement((0, 14), ActiveElementsList);
+		Tools.SkipLines(2);
+		Button button1 = new Button((Console.CursorLeft, Console.CursorTop), "Enter", (10, 3));
+		
+		Tools.SkipLines(2); // УСТАНОВКА СТАНДАРТНЫХ ЦВЕТОВ
+		Console.Write(new string(' ', 1), Console.ForegroundColor = this.GlobalTextColor, Console.BackgroundColor = this.PageBackgroundColor);
 		
 	}
 
@@ -363,6 +368,8 @@ class Button
 			Tools.SetPosition(Position.Item1, Position.Item2);
 			Console.Write(Content, Console.ForegroundColor = ContentColor, Console.BackgroundColor = NormalButtonColor);
 		}
+
+
 
 	}
 
