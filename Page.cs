@@ -9,6 +9,8 @@ class Page
 {
 	public List<ActiveElement> ActiveElementsList = new List<ActiveElement>();
 
+	public List<Button> ButtonList = new List<Button>(); // Для навигации по кнопкам нужно переделывать pageNavigation()
+
 	public ConsoleColor PageBackgroundColor = ConsoleColor.Black;
 	public ConsoleColor GlobalTextColor = ConsoleColor.White;
 	public (int, int) ConsoleSize = (80, 30);
@@ -44,24 +46,7 @@ class Page
 		Console.Write("===============Welcome to MSConsole Forms (ver. DevelopmentBuild - 0.1)=========");
 		Tools.SkipLines(2);
 		int left = 25;
-		Tools.SetPosition(left, 3);
-
-		ActiveElement text1 = new ActiveElement((left, 3), ActiveElementsList);
-		ActiveElement text2 = new ActiveElement((left, 5), ActiveElementsList);
-		ActiveElement text3 = new ActiveElement((left, 6), ActiveElementsList);
-		ActiveElement text4 = new ActiveElement((left, 7), ActiveElementsList);
-		ActiveElement text5 = new ActiveElement((left, 8), ActiveElementsList);
-
-		ActiveElement text6 = new ActiveElement((left, 9), ActiveElementsList);
-		ActiveElement text7 = new ActiveElement((left, 10), ActiveElementsList);
-		ActiveElement text8 = new ActiveElement((left, 11), ActiveElementsList);
-		ActiveElement text9 = new ActiveElement((left, 12), ActiveElementsList);
-		ActiveElement text10 = new ActiveElement((left, 13), ActiveElementsList);
-		ActiveElement text11 = new ActiveElement((left, 14), ActiveElementsList);
-		Tools.SkipLines(2);
-
-
-		Button button1 = new Button((0, 16), "Enter", (10, 3));
+		
 
 		Tools.SkipLines(2); // УСТАНОВКА СТАНДАРТНЫХ ЦВЕТОВ
 		Console.Write(new string(' ', 1), Console.ForegroundColor = this.GlobalTextColor, Console.BackgroundColor = this.PageBackgroundColor);

@@ -18,7 +18,7 @@ class Button
 
 	public bool ButtonPush = false;
 
-	public Button((int, int) position, string content, (int, int) size, ConsoleColor normal = ConsoleColor.White,
+	public Button((int, int) position, string content, (int, int) size, List<Button> butList, ConsoleColor normal = ConsoleColor.White,
 														ConsoleColor push = ConsoleColor.White,
 														ConsoleColor select = ConsoleColor.White,
 														ConsoleColor contcolor = ConsoleColor.Black)
@@ -30,6 +30,9 @@ class Button
 		this.PushedButtonColor = push;
 		this.SelecteButtonColor = select;
 		this.ContentColor = contcolor;
+
+		object o = this.MemberwiseClone();
+		butList.Add((Button) o);
 
 		drawButton();
 	}
