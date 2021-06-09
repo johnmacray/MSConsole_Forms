@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="ActiveElement.cs" />
     <Compile Include="Button.cs" />
-    <Compile Include="ConsoleProgram.cs" />
     <Compile Include="Page.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

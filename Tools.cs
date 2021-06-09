@@ -99,9 +99,8 @@ class Tools
 		}
 	}
 
-	/*	public static string ColorfulString()
+	/*public static string ColorfulString()
 		{
 			return string a;
 		}*/
 }
-

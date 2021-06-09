@@ -20,7 +20,7 @@ class Page
 	public Page(string title, (int, int) size)
 	{
 		this.Title = title;
-		this.ConsoleSize = size;
+		this.ConsoleSize = (size.Item1, size.Item2);
 		Console.SetWindowSize(this.ConsoleSize.Item1, this.ConsoleSize.Item2);
 
 		content();
@@ -56,7 +56,7 @@ class Page
 		ActiveElement text7 = new ActiveElement((left, 10), ActiveElementsList);
 		ActiveElement text8 = new ActiveElement((left, 11), ActiveElementsList);
 		ActiveElement text9 = new ActiveElement((left, 12), ActiveElementsList);
-		ActiveElement text1left = new ActiveElement((left, 13), ActiveElementsList);
+		ActiveElement text10 = new ActiveElement((left, 13), ActiveElementsList);
 		ActiveElement text11 = new ActiveElement((left, 14), ActiveElementsList);
 		Tools.SkipLines(2);
 
@@ -65,7 +65,6 @@ class Page
 
 		Tools.SkipLines(2); // УСТАНОВКА СТАНДАРТНЫХ ЦВЕТОВ
 		Console.Write(new string(' ', 1), Console.ForegroundColor = this.GlobalTextColor, Console.BackgroundColor = this.PageBackgroundColor);
-
 	}
 
 	void pageNavigation()
@@ -120,7 +119,7 @@ class Page
 		}
 		catch (Exception ex)
 		{
-			//
+			//Its looks weird. Anyway, it works
 		}
 	}
 
@@ -170,9 +169,9 @@ class Page
 	{
 		if (NavigationOn == true)
 		{
-			if (key.Key == ConsoleKey.Enter)
+			if(key.Key == ConsoleKey.Enter)
 			{
-				ActiveElementsList[clickCount].Event_ChangeTextColor(ConsoleColor.Red);
+				
 			}
 		}
 	}

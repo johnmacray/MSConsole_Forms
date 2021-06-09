@@ -10,7 +10,6 @@ class Program
 {
 	static void Main(string[] args)
 	{
-		ConsoleProgram window = new ConsoleProgram();
-		window.Run();
+		Page page = new Page("ConsoleForm", (80, 30));
 	}
 }
