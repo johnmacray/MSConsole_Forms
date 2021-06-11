@@ -1,3 +1,3 @@
 MSConsole Forms lib
-[yandex](yandex.ru)
+[yandex](https://yandex.ru)
 yandex.ru
